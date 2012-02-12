@@ -1,0 +1,41 @@
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+source $HOME/.profile
+
+alias ls='ls -FG'
+alias lock='open -a ScreenSaverEngine.app'
+alias be='bundle exec'
+
+export PATH=/Applications/teTeX.app/bin:$PATH
+export PATH=/Applications/gnuplot.app:/Applications/gnuplot.app/bin:$PATH
+export PATH=/usr/local/share/python:$PATH
+
+#export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+#export MANPATH=/opt/local/man:$MANPATH
+
+# export RAILS_ENV=akira
+export PATH=$PATH:/var/lib/gems/1.8/bin
+
+# Created by newuser for 4.3.4
+HISTFILE=~/.zsh_histfile
+HISTSIZE=10000
+SAVEHIST=10000
+setopt hist_ignore_dups
+setopt share_history
+
+autoload -U compinit
+compinit
+setopt auto_pushd
+setopt correct
+setopt nolistbeep
+setopt auto_cd
+setopt auto_list
+setopt auto_param_slash
+setopt print_eightbit
+
+#PROMPT="$USER%% "
+PROMPT="%% "
+RPROMPT="[%~]"
+bindkey -e
+
+
