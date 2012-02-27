@@ -186,7 +186,7 @@ zstyle ':completion:*' list-colors di=34 fi=0
 setopt multios
 
 # 最後がディレクトリ名で終わっている場合末尾の / を自動的に取り除かない
-setopt noautoremoveslash
+#setopt noautoremoveslash
 
 # beepを鳴らさないようにする
 setopt nolistbeep
@@ -201,7 +201,7 @@ setopt extended_glob
 # emacs like keybind (e.x. Ctrl-a goes to head of a line and Ctrl-e goes
 #   to end of it)
 #
-bindkey -v
+bindkey -e
 
 # historical backward/forward search with linehead string binded to ^P/^N
 #
@@ -226,7 +226,7 @@ SAVEHIST=10000
 setopt hist_ignore_all_dups
 
 # historyの共有
-setopt share_history
+#setopt share_history
 
 # 余分な空白は詰める
 setopt hist_reduce_blanks

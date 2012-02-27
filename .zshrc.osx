@@ -3,6 +3,7 @@ export PATH=/opt/local/bin:/opt/local/sbin/:~/bin:$PATH
 
 # osx alias
 alias pbc='pbcopy'
+alias lock='open -a ScreenSaverEngine.app'
 
 # Terminal Colorの設定
 export CLICOLOR=1
@@ -97,27 +98,27 @@ alias perl='/opt/local/bin/perl'
 
 
 # Ruby
-if [[ -s /Users/ozaki/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
+if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
 
 export REFE_DATA_DIR=/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/share/refe
 
 # Go Lang
-export GOROOT=$HOME/dev/go
-export GOOS=darwin
-export GOARCH=386
-export PATH=$PATH:$GOROOT/bin
+#export GOROOT=$HOME/dev/go
+#export GOOS=darwin
+#export GOARCH=386
+#export PATH=$PATH:$GOROOT/bin
 
 # node.js
-export NODE_PATH=/usr/local/lib/node:$PATH
-export PATH=/usr/local/share/npm/bin:$PATH
+#export NODE_PATH=/usr/local/lib/node:$PATH
+#export PATH=/usr/local/share/npm/bin:$PATH
 
 # JRuby
-export JRUBY_HOME=$HOME/sandbox/jruby/jruby-1.5.2
-export PATH=$PATH:$JRUBY_HOME/bin
+#export JRUBY_HOME=$HOME/sandbox/jruby/jruby-1.5.2
+#export PATH=$PATH:$JRUBY_HOME/bin
 
 # Mirah
-export MIRAH_HOME=$HOME/sandbox/mirah/mirah
-export PATH=$PATH:$MIRAH_HOME/bin
+#export MIRAH_HOME=$HOME/sandbox/mirah/mirah
+#export PATH=$PATH:$MIRAH_HOME/bin
 
 # For Oracle
 # export DISPLAY=:0.0
