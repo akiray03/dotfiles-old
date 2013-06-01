@@ -45,8 +45,8 @@ WHITE="%{${fg[white]}%}"
 #
 setopt prompt_subst
 #PROMPT='${fg[white]}%(5~,%-2~/.../%2~,%~)% ${RED} $ ${RESET}'
-PROMPT='${RESET}${GREEN}${WINDOW:+"[$WINDOW]"}${RESET}%{$fg_bold[blue]%}${USER}@%m %T ${RESET}${WHITE}$ ${RESET}'
-RPROMPT='${RESET}${WHITE}[${BLUE}%(5~,%-2~/.../%2~,%~)% ${WHITE}]${WINDOW:+"[$WINDOW]"} ${RESET}'
+PROMPT='${RESET}${GREEN}${WINDOW:+"[$WINDOW]"}${RESET}%{$fg_bold[blue]%}${USER}@%m %D{%H:%M:%S} ${RESET}${WHITE}$ ${RESET}'
+RPROMPT='${RESET}${WHITE}[${BLUE}%~${WHITE}]${WINDOW:+"[$WINDOW]"} ${RESET}'
 
 #
 # Vi入力モードでPROMPTの色を変える
@@ -54,10 +54,10 @@ RPROMPT='${RESET}${WHITE}[${BLUE}%(5~,%-2~/.../%2~,%~)% ${WHITE}]${WINDOW:+"[$WI
 function zle-line-init zle-keymap-select {
   case $KEYMAP in
     vicmd)
-    PROMPT='${RESET}${GREEN}${WINDOW:+"[$WINDOW]"}${RESET}%{$fg_bold[blue]%}${USER}@%m %T ${RESET}${WHITE}$ ${RESET}'
+    PROMPT='${RESET}${GREEN}${WINDOW:+"[$WINDOW]"}${RESET}%{$fg_bold[blue]%}${USER}@%m %D{%H:%M:%S} ${RESET}${WHITE}$ ${RESET}'
     ;;
     main|viins)
-    PROMPT='${RESET}${GREEN}${WINDOW:+"[$WINDOW]"}${RESET}%{$fg_bold[blue]%}${USER}@%m %T ${RESET}${WHITE}$ ${RESET}'
+    PROMPT='${RESET}${GREEN}${WINDOW:+"[$WINDOW]"}${RESET}%{$fg_bold[blue]%}${USER}@%m %D{%H:%M:%S} ${RESET}${WHITE}$ ${RESET}'
     ;;
   esac
   zle reset-prompt
@@ -116,7 +116,7 @@ function _git_not_pushed()
   return 0
 }
 
-RPROMPT="%1(v|%F${CYAN}%1v%2v%f|)${vcs_info_git_pushed}${RESET}${WHITE}[${BLUE}%(5~,%-2~/.../%2~,%~)% ${WHITE}]${WINDOW:+"[$WINDOW]"} ${RESET}"
+RPROMPT="%1(v|%F${CYAN}%1v%2v%f|)${vcs_info_git_pushed}${RESET}${WHITE}[${BLUE}%~${WHITE}]${WINDOW:+"[$WINDOW]"} ${RESET}"
 
     ;;
 esac
@@ -282,7 +282,7 @@ setopt mark_dirs
 setopt path_dirs
 
 # 戻り値が 0 以外の場合終了コードを表示する
-# setopt print_exit_value
+setopt print_exit_value
 
 # pushd を引数なしで実行した場合 pushd $HOME と見なされる
 #setopt pushd_to_home
@@ -312,8 +312,8 @@ zle -N cdup
 # bindkey '\^' cdup
 
 # ctrl-w, ctrl-bキーで単語移動
-bindkey "^W" forward-word
-bindkey "^B" backward-word
+#bindkey "^W" forward-word
+#bindkey "^B" backward-word
 
 # back-wordでの単語境界の設定
 autoload -Uz select-word-style
