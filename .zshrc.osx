@@ -102,6 +102,10 @@ if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
 
 export REFE_DATA_DIR=/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/share/refe
 
+#rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
 # Go Lang
 #export GOROOT=$HOME/dev/go
 #export GOOS=darwin
@@ -137,7 +141,7 @@ export REFE_DATA_DIR=/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/
 
 
 # tmux
-alias tmux='tmuxx'
-alias tm='tmuxx'
+#alias tmux='tmuxx'
+alias tm='tmux'
 alias tma='tmux attach'
 alias tml='tmux list-window'
